@@ -77,7 +77,14 @@ export const useStylesSignIn = makeStyles((theme) => ({
     },
     loginSideButton: {
         marginTop: 10
-    }
+    },
+    signUpPopup: {
+       marginBottom: 40 
+    },
+    signInPopup: {
+        marginBottom: 40 
+     }
+
 }))
 
 function SignIn() {
@@ -124,10 +131,11 @@ function SignIn() {
                 visible={visibleModal === 'signIn'}
                 onClose={handleCloseModal}
                 classes={classes}
-                title="Войти в аккаунт">
+                title="Увійдіть в акаунт">
                 <FormControl component="fieldset" fullWidth>
                     <FormGroup aria-label="position" row>
                         <TextField
+                            className={classes.signInPopup}
                             autoFocus
                             id="email"
                             label="E-Mail"
@@ -139,6 +147,7 @@ function SignIn() {
                             fullWidth
                         />
                         <TextField
+                            className={classes.signInPopup}
                             autoFocus
                             id="password"
                             label="Пароль"
@@ -150,7 +159,7 @@ function SignIn() {
                             fullWidth
                         />
                         <Button onClick={handleCloseModal} variant="contained" color="primary" fullWidth>
-                            Войти
+                            Увійти
                 </Button>
                     </FormGroup>
                 </FormControl>
@@ -159,14 +168,14 @@ function SignIn() {
                 visible={visibleModal === 'signUp'}
                 onClose={handleCloseModal}
                 classes={classes}
-                title="Создайте учетную запись">
-                <FormControl  component="fieldset" fullWidth>
+                title="Створити акаунт">
+                <FormControl component="fieldset" fullWidth>
                     <FormGroup aria-label="position" row>
                         <TextField
-                            
+                            className={classes.signUpPopup}
                             autoFocus
                             id="name"
-                            label="Имя"
+                            label="Ім'я"
                             InputLabelProps={{
                                 shrink: true,
                             }}
@@ -175,7 +184,7 @@ function SignIn() {
                             fullWidth
                         />
                         <TextField
-                            
+                            className={classes.signUpPopup}
                             autoFocus
                             id="email"
                             label="E-Mail"
@@ -187,7 +196,7 @@ function SignIn() {
                             fullWidth
                         />
                         <TextField
-                            
+                            className={classes.signUpPopup}
                             autoFocus
                             id="password"
                             label="Пароль"
@@ -199,7 +208,7 @@ function SignIn() {
                             fullWidth
                         />
                         <Button variant="contained" color="primary" fullWidth>
-                            Далее
+                            Далі...
                 </Button>
                     </FormGroup>
                 </FormControl>
