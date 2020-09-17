@@ -76,15 +76,17 @@ export const useStylesSignIn = makeStyles((theme) => ({
         fontWeight: 700
     },
     loginSideButton: {
-        marginTop: 10
+        marginTop: 15
     },
     signUpPopup: {
-       marginBottom: 40 
+        marginBottom: 20
     },
     signInPopup: {
-        marginBottom: 40 
-     }
-
+        marginBottom: 20
+    },
+    signButton: {
+        marginBottom: 15
+    }
 }))
 
 function SignIn() {
@@ -158,7 +160,7 @@ function SignIn() {
                             type="password"
                             fullWidth
                         />
-                        <Button onClick={handleCloseModal} variant="contained" color="primary" fullWidth>
+                        <Button className={classes.signButton} onClick={handleCloseModal} variant="contained" color="primary" fullWidth>
                             Увійти
                 </Button>
                     </FormGroup>
@@ -207,7 +209,7 @@ function SignIn() {
                             type="password"
                             fullWidth
                         />
-                        <Button variant="contained" color="primary" fullWidth>
+                        <Button className={classes.signButton} variant="contained" color="primary" fullWidth>
                             Далі...
                 </Button>
                     </FormGroup>
